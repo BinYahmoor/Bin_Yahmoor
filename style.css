@@ -1,0 +1,241 @@
+/* Reset & base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial Black', Arial, sans-serif;
+    background: linear-gradient(135deg, #002b5c, #00aaff);
+    color: white;
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    background: rgba(0,0,0,0.7);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+}
+
+nav a {
+    color: #fff;
+    margin-right: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffdd00;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
+}
+
+#hero-title {
+    font-size: 4rem;
+    color: #ffdd00;
+    animation: pulse 1.5s infinite alternate;
+}
+
+#hero-subtitle span {
+    color: #00ff99;
+    font-weight: bold;
+    animation: bounce 1.2s infinite alternate;
+}
+
+.btn {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background: #ff0066;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    transform: scale(1);
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.2) rotate(-5deg);
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.1); }
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Main content for pages */
+main {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ffdd00;
+}
+
+p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Bot container animation */
+.bot-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.bot {
+    font-size: 3rem;
+    animation: march 1s infinite alternate;
+}
+
+/* Each bot delays slightly for marching effect */
+.bot:nth-child(1) { animation-delay: 0s; }
+.bot:nth-child(2) { animation-delay: 0.2s; }
+.bot:nth-child(3) { animation-delay: 0.4s; }
+.bot:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes march {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(15deg); }
+    100% { transform: translateY(0) rotate(-10deg); }
+}
+
+.crane-container {
+    position: relative;
+    width: 100%;
+    height: 400px; /* adjust for full-size */
+    margin-top: 2rem;
+    border: 1px solid transparent; /* optional: helps see the area */
+}
+
+/* Tower on the right */
+.crane-tower {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    height: 300px;
+    background-color: #0055ff;
+}
+
+/* Arm at the top */
+.crane-arm {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 20px;
+    background-color: #ff5500;
+}
+
+/* Cable hanging to the left */
+.crane-cable {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    width: 5px;
+    height: 150px;
+    background-color: #00ff00;
+}
+
+.crane-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-top: 2rem;
+    background: #e0f7fa; /* sky color */
+    overflow: visible;
+}
+
+/* Tower rising from bottom */
+.crane-tower {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 40px;
+    height: 300px;
+    background-color: #0055ff;
+    animation: towerRise 2s ease-out forwards;
+}
+
+/* Arm at top, swinging slightly */
+.crane-arm {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 20px;
+    background-color: #ff5500;
+    transform-origin: right center;
+    animation: armSwing 3s ease-in-out infinite alternate;
+}
+
+/* Cable hanging down */
+.crane-cable {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    width: 5px;
+    height: 150px;
+    background-color: #00ff00;
+    animation: cableSwing 3s ease-in-out infinite alternate;
+}
+
+/* Load at end of cable */
+.load {
+    position: absolute;
+    top: 170px;
+    left: 47px;
+    width: 20px;
+    height: 20px;
+    background-color: #ffdd00;
+    border-radius: 50%;
+    animation: loadSwing 3s ease-in-out infinite alternate;
+}
+
+/* Animations */
+@keyframes towerRise {
+    0% { height: 0; }
+    100% { height: 300px; }
+}
+
+@keyframes armSwing {
+    0% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+
+@keyframes cableSwing {
+    0% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    100% { transform: rotate(5deg); }
+}
+
+@keyframes loadSwing {
+    0% { transform: translateX(0px) translateY(0px); }
+    50% { transform: translateX(-10px) translateY(5px); }
+    100% { transform: translateX(0px) translateY(0px); }
+}
